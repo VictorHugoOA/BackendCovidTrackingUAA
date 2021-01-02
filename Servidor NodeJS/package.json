@@ -1,0 +1,11 @@
+{
+  "name": "servidor-nodejs",
+  "version": "1.0.0",
+  "description": "Servidor Backend para el proyecto CVW",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
