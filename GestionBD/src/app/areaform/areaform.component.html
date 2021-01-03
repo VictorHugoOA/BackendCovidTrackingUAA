@@ -1,0 +1,76 @@
+<div class="container">
+    <mat-card class="form-group">
+        <mat-card-header>
+          <mat-card-title>Area</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)" >
+            
+          <mat-form-field>
+            <input matInput placeholder="ID"  class="form-control"  name="id" ngModel>
+          </mat-form-field>
+          <br>
+          
+          <mat-form-field>
+           <input matInput placeholder2="ID Organizacion"  class="form-control"  name="id_org" ngModel>   
+          </mat-form-field>
+          <br>
+    
+          <mat-form-field>
+            <input matInput placeholder="Nombre" class="form-control"  name="name" ngModel>
+          </mat-form-field>
+          <br>
+    
+          <mat-form-field>
+            <input matInput placeholder="Descripcion" class="form-control"  name="desc" ngModel>
+          </mat-form-field>
+          <br>
+    
+          <mat-form-field>
+            <input matInput placeholder="Edificio" class="form-control"  name="edif" ngModel>
+          </mat-form-field>
+          <br>
+          
+          <mat-form-field>
+            <input matInput placeholder="Piso" class="form-control"  name="piso" ngModel>
+          </mat-form-field>
+          <br>
+    
+          <mat-form-field>
+            <label>QR</label>
+          </mat-form-field>
+          <br>
+
+          <mat-form-field>
+            <input matInput placeholder="Riesgo" class="form-control"  name="riesgo" ngModel>
+          </mat-form-field>
+          <br>
+
+          <mat-form-field>
+            <input matInput placeholder="Fecha rojo" class="form-control"  name="fechar" ngModel>
+          </mat-form-field>
+          <br>
+    
+          <mat-form-field>
+            <input matInput placeholder="Latitud" class="form-control"  name="lat" ngModel>
+          </mat-form-field>
+          <br>
+
+          <mat-form-field>
+            <input matInput placeholder="Longitud" class="form-control"  name="lon" ngModel>
+          </mat-form-field>
+          <br>
+
+          <button id="submit" mat-raised-button type="submit" color="primary" >Submit</button>
+       
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+      <!--<strong>{{f.value.firstname}} </strong>
+      <br>
+      <strong>{{f.value.lastname}} </strong>
+      <br>
+      <strong>{{f.value.email}} </strong>
+      <br>
+      <strong>{{f.value.message}} </strong>-->
