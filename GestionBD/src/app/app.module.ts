@@ -9,6 +9,12 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
 import { VisitaformComponent } from './visitaform/visitaform.component';
 import { OrganizacionformComponent } from './organizacionform/organizacionform.component';
 import { AreaformComponent } from './areaform/areaform.component';
+import { QrComponent } from './components/qr/qr.component';
+import { QRCodeModule } from 'angularx-qrcode';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { AreaComponent } from './components/area/area.component';
+import { UserComponent } from './components/user/user.component';
+import { OrgComponent } from './components/org/org.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +23,18 @@ import { AreaformComponent } from './areaform/areaform.component';
     TemplateformsComponent,
     VisitaformComponent,
     OrganizacionformComponent,
-    AreaformComponent
+    AreaformComponent,
+    QrComponent,
+    NavMenuComponent,
+    AreaComponent,
+    UserComponent,
+    OrgComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    QRCodeModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
