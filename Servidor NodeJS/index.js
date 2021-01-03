@@ -19,7 +19,9 @@ connection.connect(function (err){
 })
 
 /*Rutas para las opciones*/
-var altas = require('./routes/altas')
+var altas = require('./routes/altas');
+var bajas = require('./routes/bajas');
+var consultas = require('./routes/consultas');
 
 /* Inicializar express y configuraciones */
 const app = express();
@@ -37,6 +39,8 @@ app.get("/", (req, res) =>{
 });
 
 app.use('/altas', altas(connection));
+app.use('/bajas', bajas(connection));
+app.use('/consultas', consultas(connection));
 
 /* Inicializar servidor */
 app.listen(port, () =>{
