@@ -10,10 +10,17 @@ mat-card::ng-deep.mat-card-header-text {
 
 }
 mat-card-content{
-  padding-top: 20px;
+  padding-top: 0px;
 }
 
+.row{
+  display: -webkit-flex;
+      -webkit-flex-direction: row;
 
+      display: flex;
+      flex-direction: row;
+      
+}
 
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
