@@ -22,6 +22,7 @@ connection.connect(function (err){
 var altas = require('./routes/altas');
 var bajas = require('./routes/bajas');
 var consultas = require('./routes/consultas');
+var actualizar = require('./routes/actualizar');
 
 /* Inicializar express y configuraciones */
 const app = express();
@@ -41,6 +42,7 @@ app.get("/", (req, res) =>{
 app.use('/altas', altas(connection));
 app.use('/bajas', bajas(connection));
 app.use('/consultas', consultas(connection));
+app.use('/actualizar', actualizar(connection));
 
 /* Inicializar servidor */
 app.listen(port, () =>{
