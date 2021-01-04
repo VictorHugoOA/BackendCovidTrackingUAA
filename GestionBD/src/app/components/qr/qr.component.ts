@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-qr',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./qr.component.css']
 })
 export class QrComponent implements OnInit {
+  qrdata: string;
 
   constructor() { }
-
+  @Input() value:string;
   ngOnInit(): void {
+    
+
+      this.qrdata = this.value
   }
 
 }
