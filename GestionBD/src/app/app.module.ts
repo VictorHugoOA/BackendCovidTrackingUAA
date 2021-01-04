@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
 import { AreaformComponent } from './areaform/areaform.component';
 import { QrComponent } from './components/qr/qr.component';
@@ -43,6 +44,7 @@ import { BuscaruserComponent } from './components/usercrud/buscaruser/buscaruser
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     QRCodeModule
   ],

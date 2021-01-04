@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-AltaUser: FormGroup
-  constructor() { }
+  AltaUser: FormGroup;
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
+<<<<<<< Updated upstream
     this.AltaUser=this.fb.group({
       
         user: ['', [Validators.required, Validators.pattern("p+[0-9]*$"), Validators.maxLength(10)]],
@@ -21,9 +22,17 @@ AltaUser: FormGroup
         fecha: ['', [Validators.required, Validators.pattern("^[a-zA-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]]
       });
     
+=======
+    this.AltaUser = this.fb.group({
+      user: ['', Validators.required],
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      pass: ['', Validators.required],
+      riesgo: ['', Validators.required],
+      fecha: ['', Validators.required],
+    });
+>>>>>>> Stashed changes
   }
 
-  onSubmit() {
-    
-}
+  onSubmit() {}
 }
