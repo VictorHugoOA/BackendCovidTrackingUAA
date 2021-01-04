@@ -2,6 +2,9 @@
     font-family: 'Rubik', sans-serif;
 
 }
+.login-reg-panel{
+    position: relative;
+}
 .header {
     color: #36A0FF;
     font-size: 27px;
@@ -26,7 +29,7 @@ margin-left: 30%;;
     width:30%;
     padding:0 50px;
 
-    top:20%;
+    top:70px;
     right:0;
     position:absolute;
     text-align:left;
@@ -35,7 +38,7 @@ margin-left: 30%;;
 }
 .white-panel{
     background-color: rgba(255,255, 255, 1);
-    height:700px;
+    height:1200px;
     position:absolute;
     top:70px;
     width:50%;
@@ -65,3 +68,5 @@ body{
       position:relative;
       overflow-y: hidden;
   }
+
+ 
