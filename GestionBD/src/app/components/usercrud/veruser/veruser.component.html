@@ -1,7 +1,8 @@
+<div class="container">
 <fieldset>
     <legend class="text-center header">Usuario</legend>
 <section class="characteristics" style="line-height: 1;">
-    <section class="characteristics__container">
+    <section class="characteristics__container table-responsive">
         <table class="table">
             <tr>
                 <th scope="col">User</th>
@@ -12,20 +13,26 @@
                 <th scope="col">IMEI</th>
                 <th scope="col">Riesgo</th>
                 <th scope="col">Fecha</th>
+                <th scope="col">Tipo Usuario</th>
 
             </tr>
             
-                <tr>
-                    <th scope="row"></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-
-                </tr>
+                
+            <tr *ngFor="let user of usuarios">
+                <td>{{user.Usuario}}</td>
+                <td>{{user.Nombre}}</td>
+                <td>{{user.Correo}}</td>
+                <td>{{user.Contrasena}}</td>
+                <td *ngIf="user.AutFacebook == 1">Utiliza Facebook</td>
+                <td *ngIf="user.AutFacebook == 0">No utiliza Facebook</td>
+                <td *ngIf="user.IMEI == 1">Utiliza IMEI</td>
+                <td *ngIf="user.IMEI == 0">No utiliza IMEI</td>
+                <td>{{user.Riesgo}}</td>
+                <td>{{user.Fecha_Rojo}}</td>
+                <td *ngIf="user.Admin == 1">Administrador</td>
+                <td *ngIf="user.Admin == 0">Usuario normal</td>
+      
+              </tr>
 
 
 
@@ -34,3 +41,4 @@
     </section>
 </section>
 </fieldset>
+</div>
