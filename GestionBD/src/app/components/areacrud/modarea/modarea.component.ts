@@ -58,7 +58,7 @@ export class ModareaComponent implements OnInit {
         this.AltaArea.get('fecha').value,
         this.AltaArea.get('latitud').value,
         this.AltaArea.get('longitud').value,
-      ).subscribe((result) => { }, (error) => { this.toastr.error("Ocurrió un error. Intenta cambiando el id del área o vuelve a intentar", "Error") });
+      ).subscribe((result) => { this.toastr.success("Se actualizó el área", "Área actualizada");}, (error) => { this.toastr.error("Ocurrió un error. Intenta cambiando el id del área o vuelve a intentar", "Error") });
     }
   }
   Buscar() {

@@ -52,7 +52,7 @@ export class ModuserComponent implements OnInit {
         this.AltaUser.get('fecha').value,
         this.AltaUser.get('tipouser').value
 
-      ).subscribe((result) => {}, (error) => {this.toastr.error("Ocurrió un error. Intenta cambiando el nombre de usuario o vuelve a intentar", "Error")});
+      ).subscribe((result) => {this.toastr.success("Se actualizó el usuario", "Usuario actualizado");}, (error) => {this.toastr.error("Ocurrió un error. Intenta cambiando el nombre de usuario o vuelve a intentar", "Error")});
     }
   }
   Buscar() {
