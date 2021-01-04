@@ -22,7 +22,7 @@ export class AreaComponent implements OnInit {
       edi: ['', Validators.maxLength(100)],
       piso: ['', Validators.required],
       riesgo: ['', [Validators.required, Validators.maxLength(30)]],
-      fecha: ['', Validators.required],
+      fecha: [''],
       latitud: ['', Validators.required],
       longitud: ['', Validators.required],
     });
