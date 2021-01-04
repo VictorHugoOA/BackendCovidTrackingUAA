@@ -15,6 +15,15 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { AreaComponent } from './components/area/area.component';
 import { UserComponent } from './components/user/user.component';
 import { OrgComponent } from './components/org/org.component';
+import { ModareaComponent } from './components/areacrud/modarea/modarea.component';
+import { BuscarareaComponent } from './components/areacrud/buscararea/buscararea.component';
+import { VerareasComponent } from './components/areacrud/verareas/verareas.component';
+import { ModorgComponent } from './components/orgcrud/modorg/modorg.component';
+import { BuscarorgComponent } from './components/orgcrud/buscarorg/buscarorg.component';
+import { VerorgComponent } from './components/orgcrud/verorg/verorg.component';
+import { VeruserComponent } from './components/usercrud/veruser/veruser.component';
+import { ModuserComponent } from './components/usercrud/moduser/moduser.component';
+import { BuscaruserComponent } from './components/usercrud/buscaruser/buscaruser.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +37,16 @@ import { OrgComponent } from './components/org/org.component';
     NavMenuComponent,
     AreaComponent,
     UserComponent,
-    OrgComponent
+    OrgComponent,
+    ModareaComponent,
+    BuscarareaComponent,
+    VerareasComponent,
+    ModorgComponent,
+    BuscarorgComponent,
+    VerorgComponent,
+    VeruserComponent,
+    ModuserComponent,
+    BuscaruserComponent
   ],
   imports: [
     BrowserModule,
