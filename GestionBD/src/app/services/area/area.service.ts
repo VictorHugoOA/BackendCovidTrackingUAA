@@ -31,7 +31,7 @@ export class AreaService {
   }
 
   mostrarTodasAreas(){
-    return this.http.get('http://locahost:8080/consultas/areas');
+    return this.http.get('http://localhost:8080/consultas/areas');
   }
 
   borrarArea(Id: string){
