@@ -1,14 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< Updated upstream
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
-=======
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
->>>>>>> Stashed changes
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
@@ -23,22 +14,11 @@ import { UserService } from 'src/app/services/usuario/user.service';
 export class ModuserComponent implements OnInit {
   AltaUser: FormGroup;
   uu: FormControl;
-<<<<<<< Updated upstream
-  usuario: Observable<any>;
-  constructor(
-    private fb: FormBuilder,
-    private persona: UserService,
-    private toastr: ToastrService, 
-    private router: Router
-  ) {
-    this.uu = new FormControl('', Validators.required);
-=======
   usuario: Observable<any>
   constructor(private fb: FormBuilder, private persona: UserService, private toastr: ToastrService, private login: LoginService, private router: Router) {
     if(!this.login.signedIn())
     this.router.navigateByUrl("/Home");
     this.uu = new FormControl('', Validators.required)
->>>>>>> Stashed changes
   }
 
   ngOnInit(): void {

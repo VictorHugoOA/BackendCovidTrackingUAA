@@ -18,13 +18,9 @@ export class ModareaComponent implements OnInit {
   AltaArea: FormGroup;
   id: FormControl;
   organizations: any[] = [];
-<<<<<<< Updated upstream
-  constructor(private fb: FormBuilder, private toastr: ToastrService, private area: AreaService,  private router: Router, private org: OrgService) {
-=======
   constructor(private fb: FormBuilder, private toastr: ToastrService, private area: AreaService, private org: OrgService, private login: LoginService, private router: Router) {
     if(!this.login.signedIn())
     this.router.navigateByUrl("/Home");
->>>>>>> Stashed changes
     this.id = new FormControl('', Validators.required);
     this.org.mostrarOrganizaciones().subscribe((data: any[]) => {
       for (let i = 0; i < data.length; ++i) {
