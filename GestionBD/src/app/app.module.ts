@@ -1,13 +1,13 @@
+/*Modulos*/
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
-import { AreaformComponent } from './areaform/areaform.component';
-import { QrComponent } from './components/qr/qr.component';
 import { QRCodeModule } from 'angularx-qrcode';
+import { HttpClientModule } from '@angular/common/http'
+/*Componentes */
+import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { AreaComponent } from './components/area/area.component';
 import { UserComponent } from './components/user/user.component';
@@ -21,6 +21,8 @@ import { VerorgComponent } from './components/orgcrud/verorg/verorg.component';
 import { VeruserComponent } from './components/usercrud/veruser/veruser.component';
 import { ModuserComponent } from './components/usercrud/moduser/moduser.component';
 import { BuscaruserComponent } from './components/usercrud/buscaruser/buscaruser.component';
+import { AreaformComponent } from './areaform/areaform.component';
+import { QrComponent } from './components/qr/qr.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { BuscaruserComponent } from './components/usercrud/buscaruser/buscaruser
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    QRCodeModule
+    QRCodeModule,
+    HttpClientModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
