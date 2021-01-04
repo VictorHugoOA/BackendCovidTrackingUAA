@@ -11,5 +11,7 @@ export class ModorgComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onSubmit(f) {
+    console.log(f.value);
+}
 }
