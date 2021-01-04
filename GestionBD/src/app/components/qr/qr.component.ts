@@ -11,8 +11,6 @@ export class QrComponent implements OnInit {
   constructor() { }
   @Input() value:string;
   ngOnInit(): void {
-    
-
       this.qrdata = this.value
   }
 
