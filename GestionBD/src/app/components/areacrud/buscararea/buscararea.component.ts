@@ -11,5 +11,7 @@ export class BuscarareaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onSubmit(area) {
+    console.log(area.value);
+}
 }

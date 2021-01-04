@@ -25,4 +25,8 @@ AltaUser: FormGroup;
   onSubmit() {
     
 }
+Buscar(user){
+
+}
+
 }

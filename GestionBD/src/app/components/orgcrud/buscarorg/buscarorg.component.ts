@@ -11,5 +11,7 @@ export class BuscarorgComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onSubmit(org) {
+    console.log(org.value);
+}
 }

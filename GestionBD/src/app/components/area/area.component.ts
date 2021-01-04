@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { AreaService } from 'src/app/services/area/area.service';
+import { OrgService } from 'src/app/services/organizacion/org.service';
 
 @Component({
   selector: 'app-area',
@@ -11,7 +13,14 @@ export class AreaComponent implements OnInit {
   AltaArea: FormGroup;
   Id: string;
   Idorg: string;
-  constructor(private fb: FormBuilder, private area: AreaService) { }
+  organizations: any[] = [];
+  constructor(private fb: FormBuilder, private area: AreaService, private org: OrgService, private toastr: ToastrService) {
+    this.org.mostrarOrganizaciones().subscribe((data: any[]) =>{
+      for(let i = 0; i < data.length; ++i){
+        this.organizations.push({id: data[i].Id, nombre: data[i].Nombre});
+      }
+    })
+  }
 
   ngOnInit(): void {
     this.AltaArea = this.fb.group({
@@ -23,17 +32,16 @@ export class AreaComponent implements OnInit {
       edi: ['', Validators.maxLength(100)],
       piso: ['', Validators.required],
       riesgo: ['', [Validators.required, Validators.maxLength(30)]],
-      fecha: [''],
+      fecha: [null],
       latitud: ['', Validators.required],
       longitud: ['', Validators.required],
     });
-
   }
   generarQr(){
    this.Id = this.AltaArea.get('id').value;
    this.Idorg = this.AltaArea.get('id').value;
-  
   }
+
   onSubmit() {
     if(this.AltaArea.valid){
       this.area.crearArea(
@@ -48,7 +56,7 @@ export class AreaComponent implements OnInit {
         this.AltaArea.get('fecha').value,
         this.AltaArea.get('latitud').value,
         this.AltaArea.get('longitud').value,
-        ).subscribe();
+        ).subscribe((result) => {}, (error) => {this.toastr.error("Ocurrió un error. Intenta cambiando el id del área o vuelve a intentar", "Error")});
     }
   }
 

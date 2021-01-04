@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/services/usuario/user.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserService } from 'src/app/services/usuario/user.service';
 })
 export class UserComponent implements OnInit {
   AltaUser: FormGroup;
-  constructor(private fb: FormBuilder, private persona: UserService) { }
+  constructor(private fb: FormBuilder, private persona: UserService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.AltaUser = this.fb.group({
@@ -43,7 +44,7 @@ export class UserComponent implements OnInit {
         this.AltaUser.get('riesgo').value,
         this.AltaUser.get('fecha').value,
         0
-      ).subscribe();
+      ).subscribe((result) => {}, (error) => {this.toastr.error("Ocurrió un error. Intenta cambiando el nombre de usuario o vuelve a intentar", "Error")});
     }
   }
 }

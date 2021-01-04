@@ -31,4 +31,7 @@ export class ModareaComponent implements OnInit {
   onSubmit() {
     
 }
+Buscar(area){
+
+}
 }

@@ -8,11 +8,29 @@
         <div class="col-md-12">
             
             <div class="well well-sm ">
-                <form class="form-horizontal" [formGroup]="AltaArea" (ngSubmit)="onSubmit()">
+                <div class="form-horizontal">
+                    <form (ngSubmit)="Buscar(area)">
+                        <div class="">
+                            <br>
+                            <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> ID</span>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8 ">
+                                <input id="buscar" name="buscar" #area type="text" placeholder="ID" class="form-control" ngModel>
+                            </div>
+                        </div>
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg" >Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <form class="form-horizontal" [formGroup]="AltaArea" (ngSubmit)="onSubmit()" >
                     
                     <fieldset>
                         <legend class="text-center header">Area</legend>
-
+                        
                         <div class="form-group ">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> ID</span>
                             <div class="col-md-8">

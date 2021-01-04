@@ -21,5 +21,8 @@ export class ModorgComponent implements OnInit {
 
   onSubmit() {
     
-}
+  }
+  Buscar(org){
+  
+  }
 }
