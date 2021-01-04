@@ -7,11 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class QrComponent implements OnInit {
   qrdata: string;
-
+  @Input() idar:string;
+  @Input() idorg:string;
   constructor() { }
-  @Input() value:string;
+  
   ngOnInit(): void {
-      this.qrdata = this.value
+      this.qrdata = "Area " + this.idar + " Organización " + this.idorg;
   }
 
 }

@@ -1,43 +1,45 @@
+<div class="container">
 <fieldset>
-    <legend class="text-center header">Areas</legend>
-<section class="characteristics" style="line-height: 1;">
+  <legend class="text-center header">Areas</legend>
+  <section class="characteristics" style="line-height: 1;">
     <section class="characteristics__container">
-        <table class="table">
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">ID Organizacion</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Descripcion</th>
-                <th scope="col">Edificio</th>
-                <th scope="col">Piso</th>
-                <th scope="col">QR</th>
-                <th scope="col">Riesgo</th>
-                <th scope="col">Fecha Rojo</th>
-                <th scope="col">Latitud</th>
-                <th scope="col">Longitud</th>
+      <table class="table" >
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">ID Organizacion</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Edificio</th>
+          <th scope="col">Piso</th>
+          <th scope="col">QR</th>
+          <th scope="col">Riesgo</th>
+          <th scope="col">Fecha Rojo</th>
+          <th scope="col">Latitud</th>
+          <th scope="col">Longitud</th>
 
 
-            </tr>
-            
-                <tr>
-                    <th scope="row"></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+        </tr>
 
-                </tr>
+        <tr *ngFor="let area of areas">
+          <td>{{area.Id}}</td>
+          <td>{{area.Id_Organizacion}}</td>
+          <td>{{area.Nombre}}</td>
+          <td>{{area.Descripcion}}</td>
+          <td>{{area.Edificio}}</td>
+          <td>{{area.Piso}}</td>
+          <td><app-qr [idar] = "area.Id" [idorg]="area.Id_Organizacion"></app-qr></td>
+          <td>{{area.Riesgo}}</td>
+          <td>{{area.Fecha_Rojo}}</td>
+          <td>{{area.Latitud}}</td>
+          <td>{{area.Longitud}}</td>
+
+        </tr>
 
 
 
-            
-        </table>
+
+      </table>
     </section>
-</section>
+  </section>
 </fieldset>
+</div>
