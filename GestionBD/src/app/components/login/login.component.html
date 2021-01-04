@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="page-title">Ingresar</h1>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="text">Usuario:</label>
+                    <input type="text" class="form-control" formControlName="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" class="form-control" formControlName="password">
+                </div>
+                <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary btn-lg">Entrar</button>
+            </form>
+        </div>
+    </div>
+</div>

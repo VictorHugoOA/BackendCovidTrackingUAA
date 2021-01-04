@@ -26,6 +26,7 @@ import { BuscaruserComponent } from './components/usercrud/buscaruser/buscaruser
 import { AreaformComponent } from './areaform/areaform.component';
 import { QrComponent } from './components/qr/qr.component';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CommonModule } from '@angular/common';
     VerorgComponent,
     VeruserComponent,
     ModuserComponent,
-    BuscaruserComponent
+    BuscaruserComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
