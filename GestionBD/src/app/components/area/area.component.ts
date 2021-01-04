@@ -14,6 +14,7 @@ import { OrgService } from 'src/app/services/organizacion/org.service';
 export class AreaComponent implements OnInit {
   AltaArea: FormGroup;
   Id: string;
+  qrdata:string;
   Idorg: string;
   organizations: any[] = [];
   constructor(private fb: FormBuilder, private area: AreaService, private org: OrgService, private toastr: ToastrService, private login: LoginService, private router: Router) {
@@ -47,6 +48,9 @@ export class AreaComponent implements OnInit {
   }
 
   onSubmit() {
+
+   this.qrdata=" https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+"Area " 
+   + this.AltaArea.get('id').value + " Oranizacion " + this.AltaArea.get('idOrg').value;
     if(this.AltaArea.valid){
       this.area.crearArea(
         this.AltaArea.get('id').value,
@@ -55,7 +59,7 @@ export class AreaComponent implements OnInit {
         this.AltaArea.get('desc').value,
         this.AltaArea.get('edi').value,
         this.AltaArea.get('piso').value,
-        null,
+        this.qrdata,
         this.AltaArea.get('riesgo').value,
         this.AltaArea.get('fecha').value,
         this.AltaArea.get('latitud').value,

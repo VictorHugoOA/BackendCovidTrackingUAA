@@ -18,6 +18,7 @@ export class ModareaComponent implements OnInit {
   AltaArea: FormGroup;
   id: FormControl;
   organizations: any[] = [];
+  qrdata:string;
   constructor(private fb: FormBuilder, private toastr: ToastrService, private area: AreaService, private org: OrgService, private login: LoginService, private router: Router) {
     if(!this.login.signedIn())
     this.router.navigateByUrl("/Home");
@@ -49,6 +50,8 @@ export class ModareaComponent implements OnInit {
 
   }
   onSubmit() {
+    this.qrdata=" https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+"Area " 
+    + this.AltaArea.get('id').value + " Oranizacion " + this.AltaArea.get('idOrg').value;
     if (this.AltaArea.valid) {
       this.area.actualizarArea(
         this.AltaArea.get('id').value,
@@ -57,7 +60,7 @@ export class ModareaComponent implements OnInit {
         this.AltaArea.get('desc').value,
         this.AltaArea.get('edi').value,
         this.AltaArea.get('piso').value,
-        null,
+        this.qrdata,
         this.AltaArea.get('riesgo').value,
         this.AltaArea.get('fecha').value,
         this.AltaArea.get('latitud').value,
