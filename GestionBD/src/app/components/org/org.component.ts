@@ -12,4 +12,8 @@ export class OrgComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(f) {
+    console.log(f.value);
+}
+
 }

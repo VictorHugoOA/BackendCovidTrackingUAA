@@ -12,4 +12,7 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(f) {
+    console.log(f.value);
+}
 }
