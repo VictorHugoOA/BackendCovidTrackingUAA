@@ -1,1 +1,107 @@
-<p>area works!</p>
+<div class="login-reg-panel">
+    <div class="register-info-box">
+        <h2>Registro de Area</h2>
+        
+    </div>
+    <div class="row white-panel">
+        <div class="col-md-12">
+            
+            <div class="well well-sm ">
+                <form class="form-horizontal" novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+                    
+                    <fieldset>
+                        <legend class="text-center header">Area</legend>
+
+                        <div class="form-group ">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> ID</span>
+                            <div class="col-md-8">
+                                <input id="id" name="id" type="text" placeholder="ID" class="form-control" ngModel>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> ID Organizacion</span>
+                            <div class="col-md-8">
+                                <input id="idOrg" name="idOrg" type="text" placeholder="Id de Organizacion" class="form-control" ngModel>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> Nombre</span>
+                            <div class="col-md-8">
+                                <input id="name" name="name" type="text" placeholder="Nombre" class="form-control" ngModel>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i> Descripcion</span>
+                            <div class="col-md-8">
+                                <textarea class="form-control" id="desc" name="desc" placeholder="Descripcion" rows="7" ngModel></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-qrcode bigicon"></i> QR</span>
+                            
+                        </div>
+                        
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-building bigicon"></i> Edificio</span>
+                            <div class="col-md-8">
+                                <input id="edi" name="edi" type="text" placeholder="Edificio" class="form-control" ngModel>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"> Piso</span>
+                            <div class="col-md-8">
+                                <input id="piso" name="piso" type="text" placeholder="Piso" class="form-control" ngModel>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-exclamation-triangle bigicon"></i> Riesgo</span>
+                            <div class="col-md-8">
+                                <input id="riesgo" name="riesgo" type="text" placeholder="Riesgo" class="form-control" ngModel>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-calendar-week bigicon"></i> Fecha</span>
+                            <div class="col-md-8">
+                                <input id="fecha" name="fecha" type="date" placeholder="Fecha" class="form-control" ngModel>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-map-marker-alt bigicon"></i> Latitud</span>
+                            <div class="col-md-8">
+                                <input id="latitud" name="latitud" type="text" placeholder="Latitud" class="form-control" ngModel>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-map-marker-alt bigicon"></i> Longitud</span>
+                            <div class="col-md-8">
+                                <input id="longitud" name="longitud" type="text" placeholder="Longitud" class="form-control" ngModel>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+<strong>{{f.value.fname}} </strong>
+  <br>
+  <strong>{{f.value.lname}} </strong>
+  <br>
+  

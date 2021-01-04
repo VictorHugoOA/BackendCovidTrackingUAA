@@ -11,5 +11,8 @@ export class AreaComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onSubmit(f) {
+    console.log(f.value);
+}
 
 }
