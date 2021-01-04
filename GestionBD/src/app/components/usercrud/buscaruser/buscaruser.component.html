@@ -10,16 +10,17 @@
                     
                     <fieldset style="align-items: center;">
                         <legend class="text-center header">Usuario</legend>
-
+                        <form (ngSubmit)="onSubmit(usuario)">
                             <div class="form-group">
                                 <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> Usuario</span>
                                 <div class="col-md-8 ">
-                                    <input id="buscar" name="buscar" type="text" placeholder="Nombre de usuario" class="form-control" ngModel>
+                                    <input id="buscar" name="buscar" #usuario type="text" placeholder="Nombre de usuario" class="form-control" ngModel>
                                 </div>
                                 <div class="col-md-12 text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg">Buscar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" >Buscar</button>
                                 </div>
                             </div>
+                        </form>
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center header">Datos</span>
                             

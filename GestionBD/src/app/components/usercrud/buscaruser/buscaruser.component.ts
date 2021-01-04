@@ -11,7 +11,7 @@ export class BuscaruserComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit(f) {
-    console.log(f.value);
+  onSubmit(usuario) {
+    console.log(usuario.value);
 }
 }
