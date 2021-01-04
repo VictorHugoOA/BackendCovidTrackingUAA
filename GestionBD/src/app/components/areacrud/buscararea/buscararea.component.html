@@ -116,6 +116,8 @@
                                     <span>{{(areaG |async)?.Longitud}}</span>
                                 </th>
                             </tr>
+
+                            <app-qr [idar] = "(areaG |async)?.Id" [idorg]="(areaG |async)?.Id_Organizacion"></app-qr>
                         </table>
                     </section>
                 </section>
