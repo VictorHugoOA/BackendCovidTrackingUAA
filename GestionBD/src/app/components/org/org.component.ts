@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-org',
@@ -8,11 +8,11 @@ import { FormGroup } from '@angular/forms';
 })
 export class OrgComponent implements OnInit {
   Altaorg: FormGroup
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.Altaorg=this.fb.group({
-      id: ['', [Validators.required, Validators.pattern("p+[0-9]*$"), Validators.maxLength(10)]],
+      id: ['', Validators.required],
       NOrg: ['', Validators.required],
       desc: ['', Validators.required],
       tipo: ['', Validators.required]

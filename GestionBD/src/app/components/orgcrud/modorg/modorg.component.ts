@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-modorg',
@@ -7,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModorgComponent implements OnInit {
   Altaorg: FormGroup
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.Altaorg=this.fb.group({
-      id: ['', [Validators.required, Validators.pattern("p+[0-9]*$"), Validators.maxLength(10)]],
+      id: ['', Validators.required],
       NOrg: ['', Validators.required],
       desc: ['', Validators.required],
       tipo: ['', Validators.required]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-modarea',
@@ -8,17 +9,17 @@ import { FormGroup } from '@angular/forms';
 })
 export class ModareaComponent implements OnInit {
   AltaArea: FormGroup;
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.AltaArea=this.fb.group({
       
-        id: ['', [Validators.required, Validators.pattern("p+[0-9]*$"), Validators.maxLength(10)]],
+        id: ['', Validators.required],
         idOrg: ['', Validators.required],
         name: ['', Validators.required],
         desc: ['', Validators.required],
         edi: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]],
-        piso: ['', [Validators.required, Validators.pattern("^[a-zA-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]],
+        piso: ['', Validators.required],
         riesgo: ['', Validators.required],
         fecha: ['', Validators.required],
         latitud: ['', Validators.required],
