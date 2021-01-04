@@ -8,15 +8,15 @@
         <div class="col-md-12">
 
         <div class="form-horizontal">
-            <form (ngSubmit)="Buscar(user)">
+            <form (ngSubmit)="Buscar()">
                 <div class="">
                     <br>
                     <div class="form-group">
-                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> ID</span>
+                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> Nombre de usuario</span>
                 </div>
                 <div class="form-group">
                     <div class="col-md-8 ">
-                        <input id="buscar" name="buscar" #user type="text" placeholder="ID" class="form-control" ngModel>
+                        <input id="buscar" name="buscar" #user type="text" placeholder="Usuario" class="form-control" [formControl]="uu">
                     </div>
                 </div>
                     <div class="col-md-12 text-center">
@@ -35,51 +35,63 @@
                         <div class="form-group ">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> Usuario</span>
                             <div class="col-md-8">
-                                <input id="user" name="user" type="text" placeholder="Nombre de usuario" class="form-control" >
+                                <input id="user" name="user" type="text" placeholder="Nombre de usuario" class="form-control" formControlName="user" readonly>
                             </div>
                         </div>
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> Nombre</span>
                             <div class="col-md-8">
-                                <input id="name" name="name" type="text" placeholder="Nombre" class="form-control">
+                                <input id="name" name="name" type="text" placeholder="Nombre" class="form-control" formControlName="name">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-at bigicon"></i> Correo</span>
                             <div class="col-md-8">
-                                <input id="email" name="email" type="text" placeholder="Correo" class="form-control" >
+                                <input id="email" name="email" type="text" placeholder="Correo" class="form-control" formControlName="email">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-key bigicon"></i> Contraseña</span>
                             <div class="col-md-8">
-                                <input id="pass" name="pass" type="password" placeholder="Nombre" class="form-control" >
+                                <input id="pass" name="pass" type="password" placeholder="Nombre" class="form-control" formControlName="pass">
                             </div>
                         </div>
 
-
                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><a href=""><i class="fab fa-facebook-square bigicon"></i></a> Facebook</span>
-                            
-                        
-                            <span class="col-md-1 col-md-offset-2 text-center"><a href=""><i class="fas fa-shield-alt bigicon"></i></a> IMEI</span>
-                            
-                        </div>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                              <label class="btn btn-outline-primary">
+                                <input type="radio" value="Facebook" autocomplete="off" formControlName="auth"> <span
+                                  class="col-md-1 col-md-offset-2 text-center"><i class="fab fa-facebook-square bigicon"></i>
+                                  Facebook</span>
+                              </label>
+                              <label class="btn btn-outline-primary">
+                                <input type="radio" value="IMEI" autocomplete="off" formControlName="auth"><span
+                                  class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-shield-alt bigicon"></i>
+                                  IMEI</span>
+                              </label>
+                            </div>
+                
+                          </div>
 
                         
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-exclamation-triangle bigicon"></i> Riesgo</span>
                             <div class="col-md-8">
-                                <input id="riesgo" name="riesgo" type="text" placeholder="Riesgo" class="form-control" >
+                                <input name="riesgo" list="riesgos" placeholder="Riesgo" class="form-control" autocomplete="off" formControlName="riesgo">
+                                <datalist id="riesgos">
+                                  <option value="Verde"></option>
+                                  <option value="Amarillo"></option>
+                                  <option value="Rojo"></option>
+                                </datalist>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-calendar-week bigicon"></i> Fecha</span>
                             <div class="col-md-8">
-                                <input id="fecha" name="fecha" type="date" placeholder="Fecha" class="form-control" >
+                                <input id="fecha" name="fecha" type="date" placeholder="Fecha" [value]="((usuario | async)?.Fecha_Rojo | date: 'yyyy-MM-dd')" class="form-control" formControlName="fecha" >
                             </div>
                         </div>
 

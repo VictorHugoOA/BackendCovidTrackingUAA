@@ -9,7 +9,7 @@
             
             <div class="well well-sm ">
                 <div class="form-horizontal">
-                    <form (ngSubmit)="Buscar(area)">
+                    <form (ngSubmit)="Buscar()">
                         <div class="">
                             <br>
                             <div class="form-group">
@@ -17,7 +17,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-8 ">
-                                <input id="buscar" name="buscar" #area type="text" placeholder="ID" class="form-control" ngModel>
+                                <input id="buscar" name="buscar" #area type="text" placeholder="ID" class="form-control" [formControl]="id">
                             </div>
                         </div>
                             <div class="col-md-12 text-center">
@@ -34,30 +34,32 @@
                         <div class="form-group ">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> ID</span>
                             <div class="col-md-8">
-                                <input id="id" name="id" type="text" placeholder="ID" class="form-control" >
+                                <input id="id" name="id" [value]="(areaC | async)?.Id" type="text" placeholder="ID" class="form-control" readonly formControlName="id">
                             </div>
                         </div>
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> ID Organizacion</span>
                             <div class="col-md-8">
-                                <input id="idOrg" name="idOrg" type="text" placeholder="Id de Organizacion" class="form-control" >
+                                <input name="idOrg" [value]="(areaC | async)?.Id_Organizacion" list="org" placeholder="Id de Organizacion" class="form-control" formControlName="idOrg">
+                                <datalist id="org">
+                                    <option *ngFor="let i of organizations" [value]="i.id">{{i.nombre}}</option>
+                                </datalist>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> Nombre</span>
                             <div class="col-md-8">
-                                <input id="name" name="name" type="text" placeholder="Nombre" class="form-control" >
+                                <input id="name" name="name" type="text" [value]="(areaC | async)?.Nombre" placeholder="Nombre" class="form-control" formControlName="name" >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i> Descripcion</span>
                             <div class="col-md-8">
-                                <textarea class="form-control" id="desc" name="desc" placeholder="Descripcion" rows="7" ></textarea>
+                                <textarea formControlName="desc" class="form-control" id="desc" [value]="(areaC | async)?.Descripcion" name="desc" placeholder="Descripcion" rows="7" ></textarea>
                             </div>
                         </div>
-
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-qrcode bigicon"></i> QR</span>
@@ -67,42 +69,47 @@
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-building bigicon"></i> Edificio</span>
                             <div class="col-md-8">
-                                <input id="edi" name="edi" type="text" placeholder="Edificio" class="form-control" >
+                                <input id="edi" formControlName="edi" name="edi" type="text" [value]="(areaC | async)?.Edificio" placeholder="Edificio" class="form-control" >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"> Piso</span>
                             <div class="col-md-8">
-                                <input id="piso" name="piso" type="text" placeholder="Piso" class="form-control" >
+                                <input id="piso" name="piso" formControlName="piso" type="number" step="1" [value]="(areaC | async)?.Piso" placeholder="Piso" class="form-control" >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-exclamation-triangle bigicon"></i> Riesgo</span>
                             <div class="col-md-8">
-                                <input id="riesgo" name="riesgo" type="text" placeholder="Riesgo" class="form-control" ngModel>
+                                <input id="riesgo" name="riesgo" formControlName="riesgo" list="riesgos" [value]="(areaC | async)?.Riesgo" placeholder="Riesgo" autocomplete="off" class="form-control">
+                                <datalist id="riesgos">
+                                    <option value="Verde"></option>
+                                    <option value="Amarillo"></option>
+                                    <option value="Rojo"></option>
+                                </datalist>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-calendar-week bigicon"></i> Fecha</span>
                             <div class="col-md-8">
-                                <input id="fecha" name="fecha" type="date" placeholder="Fecha" class="form-control" >
+                                <input id="fecha" name="fecha" formControlName="fecha" type="date" [value]="((areaC | async)?.Fecha_Rojo | date: 'yyyy-MM-dd')" placeholder="Fecha" class="form-control" >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-map-marker-alt bigicon"></i> Latitud</span>
                             <div class="col-md-8">
-                                <input id="latitud" name="latitud" type="text" placeholder="Latitud" class="form-control" >
+                                <input id="latitud" formControlName="latitud" name="latitud" type="number" step="0.000001" [value]="(areaC | async)?.Latitud" placeholder="Latitud" class="form-control" >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-map-marker-alt bigicon"></i> Longitud</span>
                             <div class="col-md-8">
-                                <input id="longitud" name="longitud" type="text" placeholder="Longitud" class="form-control" >
+                                <input id="longitud" formControlName="longitud" name="longitud" type="number" step="0.000001" [value]="(areaC | async)?.Longitud" placeholder="Longitud" class="form-control" >
                             </div>
                         </div>
 
