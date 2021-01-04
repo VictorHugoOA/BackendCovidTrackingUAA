@@ -5,7 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
 import { QRCodeModule } from 'angularx-qrcode';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /*Componentes */
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
@@ -23,6 +25,7 @@ import { ModuserComponent } from './components/usercrud/moduser/moduser.componen
 import { BuscaruserComponent } from './components/usercrud/buscaruser/buscaruser.component';
 import { AreaformComponent } from './areaform/areaform.component';
 import { QrComponent } from './components/qr/qr.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,9 @@ import { QrComponent } from './components/qr/qr.component';
     FormsModule,
     QRCodeModule,
     HttpClientModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
