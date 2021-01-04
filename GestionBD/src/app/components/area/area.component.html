@@ -44,7 +44,8 @@
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-qrcode bigicon"></i> QR</span>
-                            <app-qr [value] ="holis"></app-qr>
+                            <button type="button" class="btn btn-outline-primary" (click) = "generarQr()">Generar</button>
+                            <app-qr [value] ="cad"></app-qr>
                             
                         </div>
                         

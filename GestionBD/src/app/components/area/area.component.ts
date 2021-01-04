@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AreaComponent implements OnInit {
   AltaArea: FormGroup;
+  cad:any;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -27,8 +28,12 @@ export class AreaComponent implements OnInit {
       });
     
   }
+  generarQr(){
+   this.cad = this.AltaArea.get('id').value;
+   console.log(this.cad);
+  }
   onSubmit() {
     
-}
+  }
 
 }
