@@ -30,14 +30,14 @@ margin-left: 30%;;
     right:0;
     position:absolute;
     text-align:left;
-    font-size: 30px;
+    font-size: 50px;
     
 }
 .white-panel{
     background-color: rgba(255,255, 255, 1);
     height:1200px;
     position:absolute;
-    top:-50px;
+    top:70px;
     width:50%;
     right:calc(50% - 50px);
     transition:.3s ease-in-out;
