@@ -9,17 +9,15 @@
                     
                     <fieldset style="align-items: center;">
                         <legend class="text-center header">Área</legend>
-                        <form (ngSubmit)="onSubmit(area)">
                             <div class="form-group">
                                 <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> Área</span>
                                 <div class="col-md-8 ">
-                                    <input id="buscar" name="buscar" #area type="text" placeholder="ID" class="form-control" ngModel>
+                                    <input id="buscar" name="buscar" #area type="text" placeholder="ID" class="form-control" [formControl]="id">
                                 </div>
                                 <div class="col-md-12 text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg" >Buscar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" (click)="clicked()" >Buscar</button>
                                 </div>
                             </div>
-                        </form>
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center header">Datos</span>
                             
@@ -33,7 +31,7 @@
                                     <span class=""> ID</span>
                                 </th>
                                 <th>
-                                    <span>HOLA</span>
+                                    <span>{{(areaG |async)?.Id}}</span>
                                 </th>
                             </tr>
                             
@@ -42,7 +40,7 @@
                                     <span class=""> ID Organizacion</span>
                                 </th>
                                 <th>
-                                    <span></span>
+                                    <span>{{(areaG |async)?.Id_Organizacion}}</span>
                                 </th>
                             </tr>
 
@@ -51,7 +49,7 @@
                                     <span class=""> Nombre</span>
                                 </th>
                                 <th>
-                                    <span></span>
+                                    <span>{{(areaG |async)?.Nombre}}</span>
                                 </th>
                             </tr>
 
@@ -60,7 +58,7 @@
                                     <span class=""> Descripcion</span>
                                 </th>
                                 <th>
-                                    <span></span>
+                                    <span>{{(areaG |async)?.Descripcion}}</span>
                                 </th>
                             </tr>
 
@@ -69,7 +67,7 @@
                                     <span class=""> Edificio</span>
                                 </th>
                                 <th>
-                                    <span></span>
+                                    <span>{{(areaG |async)?.Edificio}}</span>
                                 </th>
                             </tr>
 
@@ -78,7 +76,7 @@
                                     <span class=""> Piso</span>
                                 </th>
                                 <th>
-                                    <span></span>
+                                    <span>{{(areaG |async)?.Piso}}</span>
                                 </th>
                             </tr>
 
@@ -87,7 +85,7 @@
                                     <span class=""> Riesgo</span>
                                 </th>
                                 <th>
-                                    <span></span>
+                                    <span>{{(areaG |async)?.Riesgo}}</span>
                                 </th>
                             </tr>
 
@@ -96,7 +94,7 @@
                                     <span class=""> Fecha</span>
                                 </th>
                                 <th>
-                                    <span></span>
+                                    <span>{{(areaG |async)?.Fecha_Rojo}}</span>
                                 </th>
                             </tr>
                             <tr>
@@ -104,7 +102,7 @@
                                     <span class=""> Latitud</span>
                                 </th>
                                 <th>
-                                    <span></span>
+                                    <span>{{(areaG |async)?.Latitud}}</span>
                                 </th>
                             </tr>
                             <tr>
@@ -112,7 +110,7 @@
                                     <span class=""> Longitud</span>
                                 </th>
                                 <th>
-                                    <span></span>
+                                    <span>{{(areaG |async)?.Longitud}}</span>
                                 </th>
                             </tr>
                         </table>

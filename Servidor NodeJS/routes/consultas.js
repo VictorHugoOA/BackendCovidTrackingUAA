@@ -82,7 +82,7 @@ function createRoute(db){
     });
 
     /*Mostrar visitas en específico*/
-    router.get('/visitasFechaLlegada/:Usuario/:Id_Area/:fechaLlegada', function(req, res){
+    router.get('/visitasEspecifico/:Usuario/:Id_Area/:fechaLlegada', function(req, res){
 
         const usuario = req.params.Usuario;
         const id_area = req.params.Id_Area;

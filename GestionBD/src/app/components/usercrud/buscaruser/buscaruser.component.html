@@ -1,147 +1,136 @@
+<div class="">
 
-  
+    <div class="col-md-12">
 
-    <div class="">
-        
-        <div class="col-md-12">
-            
 
-    
-                    
-                    <fieldset style="align-items: center;">
-                        <legend class="text-center header">Usuario</legend>
-                        <form (ngSubmit)="onSubmit(usuario)">
-                            <div class="form-group">
-                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> Usuario</span>
-                                <div class="col-md-8 ">
-                                    <input id="buscar" name="buscar" #usuario type="text" placeholder="Nombre de usuario" class="form-control" ngModel>
-                                </div>
-                                <div class="col-md-12 text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg" >Buscar</button>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center header">Datos</span>
-                            
-                        </div>
-                    <section class="container" style="line-height: 1; margin: 20px;">
-                        <section class="container">
-                        
-                        <table class="table">
-                            <tr>
-                                <th>
-                                    <span class=""> Usuario</span>
-                                </th>
-                                <th>
-                                    <span>HOLA</span>
-                                </th>
-                            </tr>
-                            
-                            <tr>
-                                <th>
-                                    <span class=""> Nombre</span>
-                                </th>
-                                <th>
-                                    <span></span>
-                                </th>
-                            </tr>
 
-                            <tr>
-                                <th>
-                                    <span class=""> Correo</span>
-                                </th>
-                                <th>
-                                    <span></span>
-                                </th>
-                            </tr>
 
-                            <tr>
-                                <th>
-                                    <span class=""> Contraseña</span>
-                                </th>
-                                <th>
-                                    <span></span>
-                                </th>
-                            </tr>
+        <fieldset style="align-items: center;">
+            <legend class="text-center header">Usuario</legend>
+            <div class="form-group">
+                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> Usuario</span>
+                <div class="col-md-8 ">
+                    <input id="buscar" name="buscar" #usuario type="text" placeholder="Nombre de usuario"
+                        class="form-control" [formControl]="user">
+                </div>
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-primary btn-lg" (click)="clicked()">Buscar</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <span class="col-md-1 col-md-offset-2 text-center header">Datos</span>
 
-                            <tr>
-                                <th>
-                                    <span class=""> Auth Facebook</span>
-                                </th>
-                                <th>
-                                    <span></span>
-                                </th>
-                            </tr>
+            </div>
+            <section class="container" style="line-height: 1; margin: 20px;">
+                <section class="container">
 
-                            <tr>
-                                <th>
-                                    <span class=""> IMEI</span>
-                                </th>
-                                <th>
-                                    <span></span>
-                                </th>
-                            </tr>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                <span class=""> Usuario</span>
+                            </th>
+                            <th>
+                                <span>{{us?.Usuario}}</span>
+                            </th>
+                        </tr>
 
-                            <tr>
-                                <th>
-                                    <span class=""> Riesgo</span>
-                                </th>
-                                <th>
-                                    <span></span>
-                                </th>
-                            </tr>
+                        <tr>
+                            <th>
+                                <span class=""> Nombre</span>
+                            </th>
+                            <th>
+                                <span>{{us?.Nombre}}</span>
+                            </th>
+                        </tr>
 
-                            <tr>
-                                <th>
-                                    <span class=""> Fecha</span>
-                                </th>
-                                <th>
-                                    <span></span>
-                                </th>
-                            </tr>
-                        </table>
-                    </section>
+                        <tr>
+                            <th>
+                                <span class=""> Correo</span>
+                            </th>
+                            <th>
+                                <span>{{us?.Correo}}</span>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <span class=""> Contraseña</span>
+                            </th>
+                            <th>
+                                <span>{{us?.Contrasena}}</span>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <span class=""> Auth Facebook</span>
+                            </th>
+                            <th>
+                                <span>{{us?.AutFacebook}}</span>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <span class=""> IMEI</span>
+                            </th>
+                            <th>
+                                <span>{{us?.IMEI}}</span>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <span class=""> Riesgo</span>
+                            </th>
+                            <th>
+                                <span>{{us?.Riesgo}}</span>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <span class=""> Fecha</span>
+                            </th>
+                            <th>
+                                <span>{{us?.Fecha_Rojo}}</span>
+                            </th>
+                        </tr>
+                    </table>
                 </section>
-                    </fieldset>
-            
-        
-        </div>
+            </section>
+        </fieldset>
 
 
-            
-<section class="characteristics" style="line-height: 1; margin: 50px;">
-    <section class="characteristics__container">
-        <h2>Visita</h2>
-        <table class="table">
-            
-            <tr>
-                <th scope="col">User</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Area</th>
-                <th scope="col">llegada</th>
-                <th scope="col">Salida</th>
-                
-
-            </tr>
-            
-                <tr>
-                    <th scope="row"></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    
-
-                </tr>
+    </div>
 
 
 
-            
-        </table>
+    <section class="characteristics" style="line-height: 1; margin: 50px;">
+        <section class="characteristics__container">
+            <h2>Visita</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">User</th>
+                        <th scope="col">Area</th>
+                        <th scope="col">llegada</th>
+                        <th scope="col">Salida</th>
+
+
+                    </tr>
+                </thead>
+                <tbody *ngIf="visitas.length > 0">
+                    <tr *ngFor="let v of visitas">
+                        <th scope="row">{{v.Usuario}}</th>
+                        <th>{{v.Id_Area}}</th>
+                        <th>{{v.Llegada | date}}</th>
+                        <th>{{v.Salida | date}}</th>
+                    </tr>
+                </tbody>
+
+
+            </table>
         </section>
     </section>
-    </div>
-    
-
-
+</div>

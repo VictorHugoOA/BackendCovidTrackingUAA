@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class UserService {
   }
 
   mostrarUsuario(Usuario: string) {
-    return this.http.get(`http://localhost:8080/consultas/persona/${Usuario}`);
+    return this.http.get(`http://localhost:8080/consultas/persona/${Usuario}`).pipe(map((data: any) => {return data[0];}));
   }
 
   mostrarUsuarios() {
@@ -42,6 +43,10 @@ export class UserService {
       FechaRojo: FechaRojo,
       Admin: Admin
     });
+  }
+
+  mostrarVisitasUsuario(Usuario:string){
+    return this.http.get(`http://localhost:8080/consultas/visitasUsuario/${Usuario}`);
   }
 
   borrarUsuario(Usuario: string) {

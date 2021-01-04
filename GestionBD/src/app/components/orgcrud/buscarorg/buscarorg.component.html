@@ -10,17 +10,15 @@
                     
                     <fieldset style="align-items: center;">
                         <legend class="text-center header">Organizacion</legend>
-                        <form (ngSubmit)="onSubmit(org)">
                             <div class="form-group">
                                 <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> ID</span>
                                 <div class="col-md-8 ">
-                                    <input id="buscar" name="buscar" #org type="text" placeholder="ID" class="form-control" ngModel>
+                                    <input id="buscar" name="buscar" #org type="text" placeholder="ID" class="form-control" [formControl]="id" >
                                 </div>
                                 <div class="col-md-12 text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg" >Buscar</button>
+                                    <button class="btn btn-primary btn-lg" (click)="clicked()" >Buscar</button>
                                 </div>
                             </div>
-                        </form>
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center header">Datos</span>
                             
@@ -34,7 +32,7 @@
                                     <span class=""> ID</span>
                                 </th>
                                 <th>
-                                    <span>HOLA</span>
+                                    <span>{{(organizacion | async)?.Id}}</span>
                                 </th>
                             </tr>
                             
@@ -43,7 +41,7 @@
                                     <span class=""> Nombre</span>
                                 </th>
                                 <th>
-                                    <span></span>
+                                    <span>{{(organizacion | async)?.Nombre}}</span>
                                 </th>
                             </tr>
 
@@ -52,7 +50,7 @@
                                     <span class=""> Descripcion</span>
                                 </th>
                                 <th>
-                                    <span></span>
+                                    <span>{{(organizacion | async)?.Descripcion}}</span>
                                 </th>
                             </tr>
 
@@ -61,7 +59,7 @@
                                     <span class=""> Tipo</span>
                                 </th>
                                 <th>
-                                    <span></span>
+                                    <span>{{(organizacion | async)?.Tipo}}</span>
                                 </th>
                             </tr>
 
