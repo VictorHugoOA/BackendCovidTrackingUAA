@@ -56,7 +56,7 @@ export class AreaComponent implements OnInit {
         this.AltaArea.get('fecha').value,
         this.AltaArea.get('latitud').value,
         this.AltaArea.get('longitud').value,
-        ).subscribe((result) => {}, (error) => {this.toastr.error("Ocurrió un error. Intenta cambiando el id del área o vuelve a intentar", "Error")});
+        ).subscribe((result) => {this.toastr.success("El área se añadió a la base de datos", "Alta área");}, (error) => {this.toastr.error("Ocurrió un error. Intenta cambiando el id del área o vuelve a intentar", "Error")});
     }
   }
 

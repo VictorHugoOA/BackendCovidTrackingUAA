@@ -28,7 +28,7 @@ export class OrgComponent implements OnInit {
         this.Altaorg.get('NOrg').value,
         this.Altaorg.get('desc').value,
         this.Altaorg.get('tipo').value
-      ).subscribe((result) => {}, (error) => {this.toastr.error("Ocurrió un error. Intenta cambiando el id de la organización vuelve a intentar", "Error")});
+      ).subscribe((result) => {this.toastr.success("La organización se añadió a la base de datos", "Alta organización");}, (error) => {this.toastr.error("Ocurrió un error. Intenta cambiando el id de la organización vuelve a intentar", "Error")});
     }
   }
 

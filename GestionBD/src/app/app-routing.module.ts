@@ -4,6 +4,7 @@ import { AreaComponent } from './components/area/area.component';
 import { BuscarareaComponent } from './components/areacrud/buscararea/buscararea.component';
 import { ModareaComponent } from './components/areacrud/modarea/modarea.component';
 import { VerareasComponent } from './components/areacrud/verareas/verareas.component';
+import { LoginComponent } from './components/login/login.component';
 import { OrgComponent } from './components/org/org.component';
 import { BuscarorgComponent } from './components/orgcrud/buscarorg/buscarorg.component';
 import { ModorgComponent } from './components/orgcrud/modorg/modorg.component';
@@ -15,7 +16,7 @@ import { VeruserComponent } from './components/usercrud/veruser/veruser.componen
 
 
 const routes: Routes = [
-  { path: 'Home',component: AreaComponent},
+  { path: 'Home',component: LoginComponent},
   { path: 'crear-area', component: AreaComponent},
   { path: 'crear-usuario', component: UserComponent},
   { path: 'crear-org', component: OrgComponent},
