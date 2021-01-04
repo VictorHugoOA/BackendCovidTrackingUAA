@@ -21,6 +21,7 @@ export class UserComponent implements OnInit {
       auth: ['', Validators.required],
       riesgo: ['', [Validators.required, Validators.maxLength(30)]],
       fecha: [null],
+      tipouser: ['', Validators.required]
     });
   }
 
@@ -43,7 +44,7 @@ export class UserComponent implements OnInit {
         autImei,
         this.AltaUser.get('riesgo').value,
         this.AltaUser.get('fecha').value,
-        0
+        this.AltaUser.get('tipouser').value
       ).subscribe((result) => {}, (error) => {this.toastr.error("Ocurrió un error. Intenta cambiando el nombre de usuario o vuelve a intentar", "Error")});
     }
   }

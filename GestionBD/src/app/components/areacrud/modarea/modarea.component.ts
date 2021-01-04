@@ -12,26 +12,26 @@ export class ModareaComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.AltaArea=this.fb.group({
-      
-        id: ['', Validators.required],
-        idOrg: ['', Validators.required],
-        name: ['', Validators.required],
-        desc: ['', Validators.required],
-        edi: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]],
-        piso: ['', Validators.required],
-        riesgo: ['', Validators.required],
-        fecha: ['', Validators.required],
-        latitud: ['', Validators.required],
-        longitud: ['', Validators.required],
+    this.AltaArea = this.fb.group({
 
-      });
-    
+      id: ['', Validators.required],
+      idOrg: ['', Validators.required],
+      name: ['', Validators.required],
+      desc: ['', Validators.required],
+      edi: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]],
+      piso: ['', Validators.required],
+      riesgo: ['', Validators.required],
+      fecha: ['', Validators.required],
+      latitud: ['', Validators.required],
+      longitud: ['', Validators.required],
+
+    });
+
   }
   onSubmit() {
-    
-}
-Buscar(area){
 
-}
+  }
+  Buscar(area) {
+
+  }
 }
