@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { OrgService } from 'src/app/services/organizacion/org.service';
 
 @Component({
   selector: 'app-org',
@@ -8,19 +9,26 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class OrgComponent implements OnInit {
   Altaorg: FormGroup
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private org: OrgService) { }
 
   ngOnInit(): void {
-    this.Altaorg=this.fb.group({
+    this.Altaorg = this.fb.group({
       id: ['', Validators.required],
-      NOrg: ['', Validators.required],
-      desc: ['', Validators.required],
-      tipo: ['', Validators.required]
+      NOrg: ['', [Validators.required, Validators.maxLength(200)]],
+      desc: ['', [Validators.required, Validators.maxLength(600)]],
+      tipo: ['', [Validators.required, Validators.maxLength(20)]]
     });
   }
 
   onSubmit() {
-    
-}
+    if(this.Altaorg.valid){
+      this.org.crearOrg(
+        this.Altaorg.get('id').value,
+        this.Altaorg.get('NOrg').value,
+        this.Altaorg.get('desc').value,
+        this.Altaorg.get('tipo').value
+      ).subscribe();
+    }
+  }
 
 }
