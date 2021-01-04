@@ -1,1 +1,123 @@
-<p>buscaruser works!</p>
+<div class="login-reg-panel">
+    <div class="register-info-box">
+        <h2>Buscar Usuario</h2>
+        
+    </div>
+
+    <div class="row white-panel">
+        <div class="col-md-12">
+            
+
+            <div class="well well-sm ">
+                <form class="form-horizontal" novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+                    
+                    <fieldset>
+                        <legend class="text-center header">Usuario</legend>
+
+                        <div class="form-group ">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> Usuario</span>
+                            <div class="col-md-8">
+                                <input id="buscar" name="buscar" type="text" placeholder="Nombre de usuario" class="form-control" ngModel>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Buscar</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center header">Datos</span>
+                            
+                        </div>
+                        <div class="form-group ">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> Usuario</span>
+                            <div class="col-md-8">
+                                <input disabled id="user" name="user" type="text" placeholder="Nombre de usuario" class="form-control" ngModel>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i> Nombre</span>
+                            <div class="col-md-8">
+                                <input disabled id="name" name="name" type="text" placeholder="Nombre" class="form-control" ngModel>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-at bigicon"></i> Correo</span>
+                            <div class="col-md-8">
+                                <input disabled id="email" name="email" type="text" placeholder="Correo" class="form-control" ngModel>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-key bigicon"></i> Contraseña</span>
+                            <div class="col-md-8">
+                                <input disabled id="pass" name="pass" type="password" placeholder="Nombre" class="form-control" ngModel>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><a href=""><i class="fab fa-facebook-square bigicon"></i></a> Facebook</span>
+                            
+                        
+                            <span class="col-md-1 col-md-offset-2 text-center"><a href=""><i class="fas fa-shield-alt bigicon"></i></a> IMEI</span>
+                            
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-exclamation-triangle bigicon"></i> Riesgo</span>
+                            <div class="col-md-8">
+                                <input disabled id="riesgo" name="riesgo" type="text" placeholder="Riesgo" class="form-control" ngModel>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-calendar-week bigicon"></i> Fecha</span>
+                            <div class="col-md-8">
+                                <input disabled id="fecha" name="fecha" type="date" placeholder="Fecha" class="form-control" ngModel>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+
+<section class="characteristics" style="line-height: 1;">
+    <section class="characteristics__container">
+        <table class="table">
+            <tr>
+                <th scope="col">User</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Contraseña</th>
+                <th scope="col">authFcebook</th>
+                <th scope="col">IMEI</th>
+                <th scope="col">Riesgo</th>
+                <th scope="col">Fecha</th>
+
+            </tr>
+            
+                <tr>
+                    <th scope="row"></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+
+                </tr>
+
+
+
+            
+        </table>
+    </section>
+</section>
