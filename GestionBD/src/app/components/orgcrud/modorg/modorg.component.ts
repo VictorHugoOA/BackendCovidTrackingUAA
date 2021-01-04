@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { OrgService } from 'src/app/services/organizacion/org.service';
@@ -13,7 +14,7 @@ export class ModorgComponent implements OnInit {
   Altaorg: FormGroup
   id: FormControl;
   organizacion: Observable<any>;
-  constructor(private fb: FormBuilder, private org: OrgService, private toastr: ToastrService) {
+  constructor(private fb: FormBuilder, private org: OrgService, private toastr: ToastrService,    private router: Router) {
     this.id = new FormControl('', Validators.required);
   }
 
@@ -35,6 +36,16 @@ export class ModorgComponent implements OnInit {
         this.Altaorg.get('tipo').value
       ).subscribe((result) => {this.toastr.success("La organización se actualizó en la base de datos", "Organización actualizada");}, (error) => {this.toastr.error("Ocurrió un error. Intenta cambiando el id de la organización vuelve a intentar", "Error")});
     }
+  }
+  borrar() {
+    this.org.borrarOrg( this.Altaorg.get('id').value)
+      .subscribe((data: any) => {
+        this.toastr.success(
+          'Se ha borrado la organización de la bse de datos',
+          'Borrar Organización'
+        );
+        this.router.navigateByUrl('/crear-org');
+      });
   }
   Buscar() {
     if (this.id.valid) {

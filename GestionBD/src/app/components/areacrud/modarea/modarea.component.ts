@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { AreaService } from 'src/app/services/area/area.service';
@@ -16,7 +17,7 @@ export class ModareaComponent implements OnInit {
   AltaArea: FormGroup;
   id: FormControl;
   organizations: any[] = [];
-  constructor(private fb: FormBuilder, private toastr: ToastrService, private area: AreaService, private org: OrgService) {
+  constructor(private fb: FormBuilder, private toastr: ToastrService, private area: AreaService,  private router: Router, private org: OrgService) {
     this.id = new FormControl('', Validators.required);
     this.org.mostrarOrganizaciones().subscribe((data: any[]) => {
       for (let i = 0; i < data.length; ++i) {
@@ -60,6 +61,16 @@ export class ModareaComponent implements OnInit {
         this.AltaArea.get('longitud').value,
       ).subscribe((result) => { this.toastr.success("Se actualizó el área", "Área actualizada");}, (error) => { this.toastr.error("Ocurrió un error. Intenta cambiando el id del área o vuelve a intentar", "Error") });
     }
+  }
+  borrar() {
+    this.area.borrarArea( this.AltaArea.get('id').value)
+      .subscribe((data: any) => {
+        this.toastr.success(
+          'Se ha borrado el área de la base de datos',
+          'Borrar Área'
+        );
+        this.router.navigateByUrl('/crear-area');
+      });
   }
   Buscar() {
     if (this.id.valid) {
