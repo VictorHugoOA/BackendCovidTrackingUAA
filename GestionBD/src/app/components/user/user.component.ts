@@ -12,7 +12,7 @@ AltaUser: FormGroup
 
   ngOnInit(): void {
     this.AltaUser=this.fb.group({
-      ({
+      
         user: ['', [Validators.required, Validators.pattern("p+[0-9]*$"), Validators.maxLength(10)]],
         name: ['', Validators.required],
         email: ['', Validators.required],
@@ -20,7 +20,7 @@ AltaUser: FormGroup
         riesgo: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]],
         fecha: ['', [Validators.required, Validators.pattern("^[a-zA-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]]
       });
-    })
+    
   }
 
   onSubmit() {
