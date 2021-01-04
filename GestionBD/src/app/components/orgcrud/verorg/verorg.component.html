@@ -1,7 +1,8 @@
+<div class="container">
 <fieldset>
     <legend class="text-center header">Organizacion</legend>
 <section class="characteristics" style="line-height: 1;">
-    <section class="characteristics__container">
+    <section class="characteristics__container table-responsive">
         <table class="table">
             <tr>
                 <th scope="col">ID</th>
@@ -12,14 +13,14 @@
 
             </tr>
             
-                <tr>
-                    <th scope="row"></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    
-
-                </tr>
+            <tr *ngFor="let org of orgs">
+                <td>{{org.Id}}</td>
+                <td>{{org.Nombre}}</td>
+                <td>{{org.Descripcion}}</td>
+                <td>{{org.Tipo}}</td>
+                
+              </tr>
+      
 
 
 
@@ -28,3 +29,4 @@
     </section>
 </section>
 </fieldset>
+</div>
