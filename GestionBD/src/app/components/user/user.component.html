@@ -56,7 +56,12 @@
             <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-exclamation-triangle bigicon"></i>
               Riesgo</span>
             <div class="col-md-8">
-              <input id="riesgo" name="riesgo" type="text" placeholder="Riesgo" class="form-control" formControlName="riesgo">
+              <input name="riesgo" list="riesgos" placeholder="Riesgo" class="form-control" autocomplete="off" formControlName="riesgo">
+              <datalist id="riesgos">
+                <option value="Verde"></option>
+                <option value="Amarillo"></option>
+                <option value="Rojo"></option>
+              </datalist>
             </div>
           </div>
           <div class="form-group">

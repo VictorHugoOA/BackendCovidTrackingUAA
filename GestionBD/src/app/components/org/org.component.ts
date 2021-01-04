@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { OrgService } from 'src/app/services/organizacion/org.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { OrgService } from 'src/app/services/organizacion/org.service';
 })
 export class OrgComponent implements OnInit {
   Altaorg: FormGroup
-  constructor(private fb: FormBuilder, private org: OrgService) { }
+  constructor(private fb: FormBuilder, private org: OrgService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.Altaorg = this.fb.group({
@@ -27,7 +28,7 @@ export class OrgComponent implements OnInit {
         this.Altaorg.get('NOrg').value,
         this.Altaorg.get('desc').value,
         this.Altaorg.get('tipo').value
-      ).subscribe();
+      ).subscribe((result) => {}, (error) => {this.toastr.error("Ocurrió un error. Intenta cambiando el id de la organización vuelve a intentar", "Error")});
     }
   }
 
