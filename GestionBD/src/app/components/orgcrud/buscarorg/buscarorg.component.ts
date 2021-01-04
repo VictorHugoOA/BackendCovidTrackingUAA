@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
+import { LoginService } from 'src/app/services/login/login.service';
 import { OrgService } from 'src/app/services/organizacion/org.service';
 
 @Component({
@@ -11,7 +13,9 @@ import { OrgService } from 'src/app/services/organizacion/org.service';
 })
 export class BuscarorgComponent implements OnInit {
 
-  constructor(private toastr: ToastrService, private org: OrgService) {
+  constructor(private toastr: ToastrService, private org: OrgService, private login: LoginService, private router: Router) {
+    if(!this.login.signedIn())
+    this.router.navigateByUrl("/Home");
     this.id = new FormControl('', [Validators.required]);
   }
 

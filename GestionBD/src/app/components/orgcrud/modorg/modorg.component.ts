@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
+import { LoginService } from 'src/app/services/login/login.service';
 import { OrgService } from 'src/app/services/organizacion/org.service';
 
 @Component({
@@ -14,7 +15,13 @@ export class ModorgComponent implements OnInit {
   Altaorg: FormGroup
   id: FormControl;
   organizacion: Observable<any>;
+<<<<<<< Updated upstream
   constructor(private fb: FormBuilder, private org: OrgService, private toastr: ToastrService,    private router: Router) {
+=======
+  constructor(private fb: FormBuilder, private org: OrgService, private toastr: ToastrService, private login: LoginService, private router: Router) {
+    if(!this.login.signedIn())
+    this.router.navigateByUrl("/Home");
+>>>>>>> Stashed changes
     this.id = new FormControl('', Validators.required);
   }
 

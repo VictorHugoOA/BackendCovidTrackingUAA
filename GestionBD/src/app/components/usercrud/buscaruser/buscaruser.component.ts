@@ -1,8 +1,10 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
+import { LoginService } from 'src/app/services/login/login.service';
 import { UserService } from 'src/app/services/usuario/user.service';
 
 @Component({
@@ -13,7 +15,9 @@ import { UserService } from 'src/app/services/usuario/user.service';
 export class BuscaruserComponent implements OnInit {
 
   user: FormControl;
-  constructor(private toastr: ToastrService, private persona: UserService) {
+  constructor(private toastr: ToastrService, private persona: UserService, private login: LoginService, private router: Router) {
+    if(!this.login.signedIn())
+    this.router.navigateByUrl("/Home");
     this.user = new FormControl('', [Validators.required]);
   }
 

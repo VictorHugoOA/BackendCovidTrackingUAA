@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AreaService } from 'src/app/services/area/area.service';
+import { LoginService } from 'src/app/services/login/login.service';
 import { OrgService } from 'src/app/services/organizacion/org.service';
 
 @Component({
@@ -14,7 +16,9 @@ export class AreaComponent implements OnInit {
   Id: string;
   Idorg: string;
   organizations: any[] = [];
-  constructor(private fb: FormBuilder, private area: AreaService, private org: OrgService, private toastr: ToastrService) {
+  constructor(private fb: FormBuilder, private area: AreaService, private org: OrgService, private toastr: ToastrService, private login: LoginService, private router: Router) {
+    if(!this.login.signedIn())
+      this.router.navigateByUrl("/Home");
     this.org.mostrarOrganizaciones().subscribe((data: any[]) =>{
       for(let i = 0; i < data.length; ++i){
         this.organizations.push({id: data[i].Id, nombre: data[i].Nombre});

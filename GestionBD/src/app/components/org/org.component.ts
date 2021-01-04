@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { LoginService } from 'src/app/services/login/login.service';
 import { OrgService } from 'src/app/services/organizacion/org.service';
 
 @Component({
@@ -10,7 +12,10 @@ import { OrgService } from 'src/app/services/organizacion/org.service';
 })
 export class OrgComponent implements OnInit {
   Altaorg: FormGroup
-  constructor(private fb: FormBuilder, private org: OrgService, private toastr: ToastrService) { }
+  constructor(private fb: FormBuilder, private org: OrgService, private toastr: ToastrService, private login: LoginService, private router: Router) {
+    if(!this.login.signedIn())
+    this.router.navigateByUrl("/Home");
+  }
 
   ngOnInit(): void {
     this.Altaorg = this.fb.group({

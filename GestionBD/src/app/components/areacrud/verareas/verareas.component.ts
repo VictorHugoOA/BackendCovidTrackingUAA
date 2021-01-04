@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AreaService } from 'src/app/services/area/area.service';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-verareas',
@@ -8,7 +10,10 @@ import { AreaService } from 'src/app/services/area/area.service';
 })
 export class VerareasComponent implements OnInit {
   areas: any[]=[];
-  constructor(private areasS: AreaService) { }
+  constructor(private areasS: AreaService, private login: LoginService, private router: Router) {
+    if(!this.login.signedIn())
+    this.router.navigateByUrl("/Home");
+  }
 
   ngOnInit(): void {
     this.areasS.mostrarTodasAreas().subscribe((data:any[]) =>

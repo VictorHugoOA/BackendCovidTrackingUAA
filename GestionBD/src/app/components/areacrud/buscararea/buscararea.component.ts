@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { AreaService } from 'src/app/services/area/area.service';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-buscararea',
@@ -11,7 +13,9 @@ import { AreaService } from 'src/app/services/area/area.service';
 })
 export class BuscarareaComponent implements OnInit {
 
-  constructor(private toastr: ToastrService, private area: AreaService) {
+  constructor(private toastr: ToastrService, private area: AreaService, private login: LoginService, private router: Router) {
+    if(!this.login.signedIn())
+    this.router.navigateByUrl("/Home");
     this.id = new FormControl('', [Validators.required]);
   }
 
