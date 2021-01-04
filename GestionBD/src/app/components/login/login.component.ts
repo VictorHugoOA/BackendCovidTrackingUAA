@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   user:Observable<any>;
-  constructor(private fb: FormBuilder, private router: Router, private usuario: UserService, private toastr: ToastrService, private login: LoginService) {
+  constructor(private fb: FormBuilder, private login: LoginService) {
     this.login.signOut();
    /* if()
     {
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     if(this.loginForm.valid){
-      this.login.signIn(this.loginForm.get('name').value, this.loginForm.get('password').value)
+     this.login.signIn(this.loginForm.get('name').value, this.loginForm.get('password').value);
     }
   }
 
