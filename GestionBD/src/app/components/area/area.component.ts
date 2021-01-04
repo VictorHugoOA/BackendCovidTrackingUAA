@@ -9,7 +9,8 @@ import { AreaService } from 'src/app/services/area/area.service';
 })
 export class AreaComponent implements OnInit {
   AltaArea: FormGroup;
-  cad: string;
+  Id: string;
+  Idorg: string;
   constructor(private fb: FormBuilder, private area: AreaService) { }
 
   ngOnInit(): void {
@@ -29,8 +30,9 @@ export class AreaComponent implements OnInit {
 
   }
   generarQr(){
-   this.cad = this.AltaArea.get('id').value;
-   console.log(this.cad);
+   this.Id = this.AltaArea.get('id').value;
+   this.Idorg = this.AltaArea.get('id').value;
+  
   }
   onSubmit() {
     if(this.AltaArea.valid){
